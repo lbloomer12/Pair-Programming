@@ -10,6 +10,12 @@ Point::Point(double xCord, double yCord)
     y = yCord;
 }
 
+Point::Point(const Point& p)
+{
+    x = p.getX();
+    y = p.getY();
+}
+
 double Point::getX()
 {
     return x;

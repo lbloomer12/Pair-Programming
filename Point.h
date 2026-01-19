@@ -5,10 +5,11 @@ using namespace std;
 
 class Point {
     public:
-        double getX();
-        double getY();
-        string toString();
+        double getX() const;
+        const double getY();
+        const string toString();
         Point(double x, double y);
+        Point(const Point& p);
 
     private:
         double x;
