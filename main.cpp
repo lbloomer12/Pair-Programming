@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #define CATCH_CONFIG_NO_POSIX_SIGNALS
 #define CATCH_CONFIG_MAIN   
 #include "catch.hpp"
@@ -37,7 +38,7 @@ TEST_CASE("Test Line")
 
 	SECTION("Distance")
 	{
-		REQUIRE(testLine.getLength() == 2.8);
+		REQUIRE(testLine.getLength() == sqrt(pow(3-1, 2) + pow(4-2, 2)));
 	}
 
 	SECTION("Slope")
