@@ -32,8 +32,10 @@ bool Line::containsPoint(Point p)
 
 Point Line::getMidpoint()
 {
-    Point p;
-    return p;
+    double midpointX = (point1.getX() + point2.getX()) / 2;
+    double midpointY = (point1.getY() + point2.getY()) / 2;
+    Point midpoint(midpointX, midpointY);
+    return midpoint;
 }
 
 void Line::extendLine(double value)
