@@ -4,8 +4,8 @@ using namespace std;
 
 class Point {
     public:
-        string getX();
-        string getY();
+        double getX();
+        double getY();
         string toString();
         Point(double x, double y);
 

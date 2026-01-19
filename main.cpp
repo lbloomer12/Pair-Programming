@@ -2,7 +2,7 @@
 #define CATCH_CONFIG_NO_POSIX_SIGNALS
 #define CATCH_CONFIG_MAIN   
 #include "catch.hpp"
-#include "Point.h"
+#include "Line.h"
 using namespace std;
 
 //--
@@ -51,7 +51,9 @@ TEST_CASE("Test Line")
 
 	SECTION("Midpoint")
 	{
-		REQUIRE(testLine.getMidpoint() == testPoint3);
+
+		REQUIRE(testLine.getMidpoint().getX() == testPoint3.getX());
+		REQUIRE(testLine.getMidpoint().getY() == testPoint3.getY());
 	}
 
 	SECTION("Extend Line")
