@@ -40,32 +40,32 @@ TEST_CASE("Test Line")
 		REQUIRE(testLine.getLength() == 2.8);
 	}
 
-	// SECTION("Slope")
-	// {
-	// 	REQUIRE(testLine.getSlope() == 1.0);
-	// }
+	SECTION("Slope")
+	{
+		REQUIRE(testLine.getSlope() == 1.0);
+	}
 
-	// SECTION("Point on Line")
-	// {
-	// 	REQUIRE(testLine.containsPoint(testPoint3) == true);
-	// 	REQUIRE(testLine.containsPoint(testPoint4) == false);
-	// }
+	SECTION("Point on Line")
+	{
+		REQUIRE(testLine.containsPoint(testPoint3) == true);
+		REQUIRE(testLine.containsPoint(testPoint4) == false);
+	}
 
-	// SECTION("Midpoint")
-	// {
+	SECTION("Midpoint")
+	{
 
-	// 	REQUIRE(testLine.getMidpoint().getX() == testPoint3.getX());
-	// 	REQUIRE(testLine.getMidpoint().getY() == testPoint3.getY());
-	// }
+		REQUIRE(testLine.getMidpoint().getX() == testPoint3.getX());
+		REQUIRE(testLine.getMidpoint().getY() == testPoint3.getY());
+	}
 
-	// SECTION("Extend Line")
-	// {
-	// 	testLine.extendLine(2.0);
-	// 	REQUIRE(testLine.getLength() == 6.8);
-	// }
+	SECTION("Extend Line")
+	{
+		testLine.extendLine(2.0);
+		REQUIRE(testLine.getLength() == 6.8);
+	}
 
-	// SECTION("ToString")
-	// {
-	// 	REQUIRE(testLine.toString() == "Line- Point 1: [X: 1.0, Y: 2.0], Point 2: [X: 3.0, Y: 4.0], Length: 2.8");
-	// }
+	SECTION("ToString")
+	{
+		REQUIRE(testLine.toString() == "Line- Point 1: [X: 1.0, Y: 2.0], Point 2: [X: 3.0, Y: 4.0], Length: 2.8");
+	}
 }
