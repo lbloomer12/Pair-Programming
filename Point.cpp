@@ -32,6 +32,16 @@ double Point::getY() const
     return y;
 }
 
+void Point::setX(double newX)
+{
+    x = newX;
+}
+
+void Point::setY(double newY)
+{
+    y = newY;
+}
+
 string Point::toString()
 {
     double roundX = round(x * 10.0) / 10.0;

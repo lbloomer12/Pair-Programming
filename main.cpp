@@ -61,8 +61,9 @@ TEST_CASE("Test Line")
 
 	SECTION("Extend Line")
 	{
+		double prevLength = testLine.getLength();
 		testLine.extendLine(2.0);
-		REQUIRE(testLine.getLength() == 6.8);
+		REQUIRE(testLine.getLength() == prevLength + 4.0);
 	}
 
 	SECTION("ToString")

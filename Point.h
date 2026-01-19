@@ -7,6 +7,8 @@ class Point {
     public:
         double getX() const;
         double getY() const;
+        void setX(double newX);
+        void setY(double newY);
         string toString();
         Point(double x, double y);
         Point(const Point& p);

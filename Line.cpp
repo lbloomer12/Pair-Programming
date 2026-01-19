@@ -3,8 +3,16 @@
 
 Line::Line(Point& p1, Point& p2)
 {
-    point1 = p1;
-    point2 = p2;
+    if(p1.getX() < p2.getX()) 
+    {
+        point1 = p1;
+        point2 = p2;
+    } 
+    else 
+    {
+        point1 = p2;
+        point2 = p1;
+    }
 }
 
 double Line::getLength()
@@ -40,7 +48,18 @@ Point Line::getMidpoint()
 
 void Line::extendLine(double value)
 {
-    
+    double newX1, newX2, newY1, newY2;
+    double slope = getSlope();
+    newX1 = point1.getX() - value / (sqrt(1 + slope*slope));
+    newX2 = point2.getX() + value / (sqrt(1 + slope*slope));
+    newY1 = point1.getY() - (slope * value) / (sqrt(1 + slope*slope));
+    newY2 = point2.getY() + (slope * value) / (sqrt(1 + slope*slope));
+
+    point1.setX(newX1);
+    point1.setY(newY1);
+
+    point2.setX(newX2);
+    point2.setY(newY2);
 }
 
 string Line::toString() 
