@@ -14,11 +14,19 @@ double Line::getLength()
 
 double Line::getSlope() 
 {
-    return 0.0;
+    return (point1.getY() - point2.getY()) / (point1.getX() - point2.getX());
 }
 
 bool Line::containsPoint(Point p)
 {
+    int x = p.getX(), y = p.getY();
+    bool inBoundsX = (x <= point1.getX() && x >= point2.getX()) || (x <= point2.getX() && x >= point1.getX());
+    bool inBoundsY = (y <= point1.getY() && y >= point2.getY()) || (y <= point2.getY() && y >= point1.getY());
+
+    if(inBoundsX && inBoundsY && ( (y-point1.getY()) / (x-point1.getX()) == getSlope() ) ) 
+    {
+        return true;
+    }
     return false;
 }
 

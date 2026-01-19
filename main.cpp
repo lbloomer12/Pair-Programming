@@ -43,7 +43,7 @@ TEST_CASE("Test Line")
 
 	SECTION("Slope")
 	{
-		REQUIRE(testLine.getSlope() == 1.0);
+		REQUIRE(testLine.getSlope() == (1.0 * (4-2)) / (3-1));
 	}
 
 	SECTION("Point on Line")
