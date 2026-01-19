@@ -4,6 +4,12 @@
 #include <sstream>
 #include <iomanip>
 
+Point::Point() 
+{
+    x = 0.0;
+    y = 0.0;
+}
+
 Point::Point(double xCord, double yCord)
 {
     x = xCord;
@@ -16,12 +22,12 @@ Point::Point(const Point& p)
     y = p.getY();
 }
 
-double Point::getX()
+double Point::getX() const
 {
     return x;
 }
 
-double Point::getY()
+double Point::getY() const
 {
     return y;
 }
