@@ -10,20 +10,22 @@ using namespace std;
 
 //--
 TEST_CASE("Test Point")  
-{ 
+{
+	Point testPoint(1.2, 3.4);
+	Point testPoint2(0.34, 1.27);
 	SECTION("Constructor")
 	{
-		Point testPoint(1.2, 3.4);
-
 		REQUIRE(testPoint.getX() == 1.2);
 		REQUIRE(testPoint.getY() == 3.4);
+
+		REQUIRE(testPoint2.getX() == 0.34);
+		REQUIRE(testPoint2.getY() == 1.27);
 	}
 
 	SECTION("ToString")
 	{
-		Point testPoint(1.2, 3.4);
-
 		REQUIRE(testPoint.toString() == "X: 1.2, Y: 3.4");
+		REQUIRE(testPoint2.toString() == "X: 0.3, Y: 1.3");
 	}
 }
 //--
@@ -62,8 +64,16 @@ TEST_CASE("Test Line")
 	SECTION("Extend Line")
 	{
 		double prevLength = testLine.getLength();
+		double prevSlope = testLine.getSlope();
+
+		Point checkOnLine(3.5, 4.5);
+		REQUIRE(testLine.containsPoint(checkOnLine) == false);
+		
 		testLine.extendLine(2.0);
+
+		REQUIRE(testLine.containsPoint(checkOnLine) == true);
 		REQUIRE(testLine.getLength() == prevLength + 4.0);
+		REQUIRE(testLine.getSlope() == prevSlope);
 	}
 
 	SECTION("ToString")
